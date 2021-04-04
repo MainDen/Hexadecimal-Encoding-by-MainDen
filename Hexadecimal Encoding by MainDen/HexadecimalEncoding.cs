@@ -569,7 +569,7 @@ namespace MainDen.Modules.Text
             get
             {
                 lock (lSettings)
-                    return hex ??= new HexEncoding();
+                    return hex ?? (hex = new HexEncoding());
             }
         }
 
@@ -578,7 +578,7 @@ namespace MainDen.Modules.Text
             get
             {
                 lock (lSettings)
-                    return hASCII ??= new HASCIIEncoding();
+                    return hASCII ?? (hASCII = new HASCIIEncoding());
             }
         }
 
